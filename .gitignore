@@ -1,0 +1,8 @@
+# ignore pdf files
+*.pdf
+
+# ignore zip archives
+*.zip
+
+# ignore word files
+.docx
