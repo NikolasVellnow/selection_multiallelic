@@ -6,3 +6,13 @@
 
 # ignore word files
 .docx
+
+# library files
+*.bib
+
+# image files
+*.png
+*.jpg
+
+# annoying Desktop Service Store on mac
+.DS_Store
