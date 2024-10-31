@@ -1,6 +1,6 @@
 function [A] = calc_A_fluctuating(lambda, n)
-% Calculates entries of matrix of fitness effects A_ij(x) with heterozygote
-% advantage sigma common to all heterozygotes and number of n alleles
+% Calculates entries of matrix of fluctuating fitness effects A_ij(x)
+% with parameter lambda and number of n alleles
 
 Z = randn(n);
 

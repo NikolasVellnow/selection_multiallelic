@@ -13,9 +13,13 @@
 # image files
 *.png
 *.jpg
+*.bmp
 
 # auto-save file from matlab
 *.asv
 
 # annoying Desktop Service Store on mac
 .DS_Store
+
+# Rhistory file
+.Rhistory
