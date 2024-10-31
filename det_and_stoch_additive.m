@@ -16,9 +16,9 @@ clc
 
 % Parameters
 n=3;                                        % No. alleles
-T=2e4;                                      % Final time
+T=5e3;                                      % Final time
 s = [0.01; 0.03; 0.06];                     % allele- associated selection coefficients
-N=5e3;                                      % Population size
+N=1e3;                                      % Population size
 f_1 = [0.7; 0.15; 0.15];                    % Starting freqs replicate 1
 f_2 = [0.15; 0.7; 0.15];                    % Starting freqs replicate 2
 f_3 = [0.15; 0.15; 0.7];                    % Starting freqs replicate 3

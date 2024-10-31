@@ -16,9 +16,9 @@ clc
 
 % Parameters
 n=3;                                        % No. alleles
-T=2e4;                                      % Final time
-s0 = 0.02;                                  % strength of selection
-N=5e3;                                      % Population size
+T=5e3;                                      % Final time
+s0 = 0.0004;                                 % strength of selection
+N=1e3;                                      % Population size
 Reps=3;                                     % No. deterministic trajectories
 f_1 = [0.5; 0.25; 0.25];                    % Starting freqs replicate 1
 f_2 = [0.25; 0.5; 0.25];                    % Starting freqs replicate 2
@@ -26,7 +26,7 @@ f_3 = [0.25; 0.25; 0.5];                    % Starting freqs replicate 3
 
 
 % Create matrix of fitness effects A
-%A = calc_A_random(n,s0);
+%A = calc_A_fluctuating(s0, n);
 
 A = [0.010753342790922, 0.026960583349632, -0.026924388833093;
 0.026960583349632, 0.006375304797180, -0.009650638297666;

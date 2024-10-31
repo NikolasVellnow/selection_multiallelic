@@ -16,9 +16,9 @@ clc
 
 % Parameters
 n=3;                                        % No. alleles
-T=1e4;                                      % Final time
+T=5e3;                                      % Final time
 c = 0.05;                                   % strength of NFDS
-N=5e3;                                      % Population size
+N=1e3;                                      % Population size
 Reps=3;                                     % No. deterministic trajectories
 f_1 = [0.7; 0.15; 0.15];                    % Starting freqs replicate 1
 f_2 = [0.15; 0.7; 0.15];                    % Starting freqs replicate 2
@@ -69,10 +69,13 @@ end
 
 % plotting
 
+% constant to make points "pop out" the plane
+d=0.004;
+
 for r=1:Reps
     plot3(Xd(1,1,r),Xd(2,1,r),Xd(3,1,r),'b.','MarkerSize',40)               % plots initial point of all trajectories
     hold on
-    plot3(Xd(1,end,r),Xd(2,end,r),Xd(3,end,r),'r.','MarkerSize',40)         % plots final point(s) deterministic trajectories
+    plot3(Xd(1,end,r)+d,Xd(2,end,r)+d,Xd(3,end,r)+d,'r.','MarkerSize',40)         % plots final point(s) deterministic trajectories
     x=squeeze(Xd(:,:,r));
     plot3(x(1,:),x(2,:),x(3,:),'m','linewidth',2.5)                           % plots deterministic trajectories
     x=squeeze(Xs(:,:,r));
