@@ -24,6 +24,9 @@ f_1 = [0.7; 0.15; 0.15];                    % Starting freqs replicate 1
 f_2 = [0.15; 0.7; 0.15];                    % Starting freqs replicate 2
 f_3 = [0.15; 0.15; 0.7];                    % Starting freqs replicate 3
 
+% Initialize random number generator with seed for reproducibility
+rng(123);
+
 % Create matrix of fitness effects A
 A = calc_A_nfds(x, c);
 
@@ -117,5 +120,7 @@ set(gcf,'Units','normalized','OuterPosition',[0 0 1 1],'Units',ounits)
 orient landscape
 %print -dpng Both
 
-saveas(gcf, 'det_and_stoch_nfds.png');
+%saveas(gcf, 'det_and_stoch_nfds.png');
+print -dpdf -bestfit -r300 det_and_stoch_nfds
+%exportgraphics(gcf,'det_and_stoch_nfds.pdf','ContentType','vector');
 

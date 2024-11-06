@@ -24,6 +24,8 @@ f_1 = [0.5; 0.25; 0.25];                    % Starting freqs replicate 1
 f_2 = [0.25; 0.5; 0.25];                    % Starting freqs replicate 2
 f_3 = [0.25; 0.25; 0.5];                    % Starting freqs replicate 3
 
+% Initialize random number generator with seed for reproducibility
+rng(123);
 
 % Create matrix of fitness effects A
 %A = calc_A_fluctuating(s0, n);
@@ -117,5 +119,7 @@ set(gcf,'Units','normalized','OuterPosition',[0 0 1 1],'Units',ounits)
 orient landscape
 %print -dpng Both
 
-saveas(gcf, 'det_and_stoch_random.png');
+%saveas(gcf, 'det_and_stoch_random.png');
+print -dpdf -bestfit -r300 det_and_stoch_random
+%exportgraphics(gcf,'det_and_stoch_random.pdf','ContentType','vector');
 

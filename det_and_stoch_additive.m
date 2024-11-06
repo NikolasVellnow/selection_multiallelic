@@ -26,6 +26,9 @@ f_3 = [0.15; 0.15; 0.7];                    % Starting freqs replicate 3
 
 Reps=3;                                     % No. deterministic trajectories
 
+% Initialize random number generator with seed for reproducibility
+rng(123);
+
 % Create matrix of fitness effects A
 A = calc_A_additive(s);
 
@@ -114,5 +117,7 @@ set(gcf,'Units','normalized','OuterPosition',[0 0 1 1],'Units',ounits)
 orient landscape
 %print -dpng Both
 
-saveas(gcf, 'det_and_stoch_additive.png');
+%saveas(gcf, 'det_and_stoch_additive.png');
+print -dpdf -bestfit -r300 det_and_stoch_additive
+%exportgraphics(gcf,'det_and_stoch_additive.pdf','ContentType','vector');
 
