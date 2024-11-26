@@ -16,4 +16,6 @@ The script `detection_prob.m` calculates and plots the probability to sample an 
 The script `threshold_sim.m` calculates and plots the frequency trajectories of 10 alleles and the effect that an observation threshold has on them.
 
 ## Manuscript
-...coming soon...
+The preprint of this manuscript has been deposited on bioRxiv: https://doi.org/10.1101/2024.11.08.622587 
+
+Information about the published article will come as soon as possible.
