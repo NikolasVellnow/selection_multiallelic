@@ -13,7 +13,7 @@ clc
 % Parameters
 n=3;                                        % No. alleles
 T=1e4;                                      % Final time (in unit time steps)
-Reps=20000;
+
 A =[0.0108    0.0270   -0.0269
     0.0270    0.0064   -0.0097
    -0.0269   -0.0097    0.0716];
@@ -23,11 +23,25 @@ I=eye(n);
 Tset=(0:T)';
 F=ones(n,1);
 
+freqs = linspace(0,1, 51);      % generate frequencies
+% Use ndgrid to create all combinations
+[grid_1, grid_2, grid_3] = ndgrid(freqs, freqs, freqs);
+
+% Reshape the grids into column vectors to form a matrix of combinations
+combs = [grid_1(:), grid_2(:), grid_3(:)];
+
+freq_combs = combs(sum(combs, 2) == 1, :);
+
+Reps=size(freq_combs,1);
+
 % Initialisation
 X=zeros(n,T+1,Reps);                   % X(i,t,r)=frequency of allele i at time t-1 in replicate r
 for r=1:Reps
-    X0=rand(n,1); X0=X0/sum(X0);        
-    X(:,1,r)=X0;                        % Assign random initial frequencies
+    %X0=rand(n,1); X0=X0/sum(X0);        
+    %X(:,1,r)=X0;                        % Assign random initial frequencies
+    X(1,1,r) = freq_combs(r, 1);        % Assign frequency of first allele
+    X(2,1,r) = freq_combs(r, 2);        % Assign frequency of second allele
+    X(3,1,r) = freq_combs(r, 3);        %Assign frequency of third allele
     % Time loop
     for k=1:T
         x=X(:,k,r);
