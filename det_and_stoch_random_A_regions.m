@@ -127,7 +127,7 @@ end
 
 % stochastic loop
 for r=1:Reps_s
-    plot3(Xs(1,1,r),Xs(2,1,r),Xs(3,1,r),'b.','MarkerSize',40)           % plots initial point of all trajectories
+    plot3(Xs(1,1,r),Xs(2,1,r),Xs(3,1,r),'b.','MarkerSize',40,'MarkerEdgeColor','k')           % plots initial point of all trajectories
     %hold on
     x=squeeze(Xs(:,:,r));
     plot3(x(1,1:T/10),x(2,1:T/10),x(3,1:T/10)+0.005,'k','linewidth',2.0)      % plots stochastic trajectories
@@ -157,6 +157,7 @@ orient landscape
 
 %saveas(gcf, 'det_and_stoch_random_regions.png');
 %print("det_and_stoch_random_regions.eps",'-depsc2');
-print -dpdf -fillpage -r300 det_and_stoch_random_regions
+print -dpdf -bestfit -r300 det_and_stoch_random_regions
+%exportgraphics(gcf,'det_and_stoch_random_regions.png','Resolution',300)
 %exportgraphics(gcf,'det_and_stoch_random_regions.pdf','ContentType','image');
 
