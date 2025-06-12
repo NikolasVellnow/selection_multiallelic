@@ -89,7 +89,7 @@ for r=1:Reps_s
         x=Xs(:,k,r);
         V=diag(x)-x*x';
         D=V*A*x/(1+x'*A*x);
-        m=mnrnd(2*N,x+D)';                      % Multinomial random variable (implements drift)
+        m=mnrnd(2*N,x+D)';          % Multinomial random variable (implements drift)
         xp=m/2/N;
         Xs(:,k+1,r)=xp;
     end

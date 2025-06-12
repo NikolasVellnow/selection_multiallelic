@@ -1,11 +1,22 @@
+# ignore subdirectories
+*/
 # ignore pdf files
 *.pdf
 
 # ignore zip archives
 *.zip
 
-# ignore word files
+# ignore MS files
 *.docx
+*.pptx
+*.xlsx
+
+# ignore other files
+*.html
+*.Rmd
+
+# ignore .tex files
+*.tex
 
 # library files
 *.bib
@@ -16,6 +27,11 @@
 *.bmp
 *.tiff
 *.eps
+
+# ignore results files that are sometimes very large
+*.txt
+*.csv
+*.tsv
 
 # auto-save file from matlab
 *.asv

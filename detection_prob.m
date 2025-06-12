@@ -24,8 +24,6 @@ for i = 1:num_freqs
         df.coverage(counter) = x;
         prob = 1 - (1 - freq)^x;
         df.prob_detection(counter) = prob;
-        %disp(x);  % Equivalent to print in R
-        %disp(prob);
     end
 end
  

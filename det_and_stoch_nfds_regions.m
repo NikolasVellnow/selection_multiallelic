@@ -64,7 +64,7 @@ for r=1:Reps
     end
 end
 
-% Loop for stochastic trajectories
+%Loop for stochastic trajectories
 for r=1:Reps_s
     % Choose starting frequencies for (first three) replicates
     if r==1
@@ -94,7 +94,6 @@ end
 
 p=squeeze(abs(Xd(2,end,:)-(1/3))<1e-2);   % Indicates trajectories where X(2) goes to 1/3
 
-disp(p);
 Xd1=Xd(:,:,p);                            % Set of trajectories where X(2) goes to 1/3              
 
 transp = 0.4;
