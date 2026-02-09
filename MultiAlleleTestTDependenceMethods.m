@@ -17,7 +17,7 @@ line_width_median = 8;
 font_size = 50;
 
 % Parameters
-n=4;                    % No. of alleles
+n=8;                    % No. of alleles
 Tmax=50;               % Maximum length trajectory
 Tset=1:1:Tmax;        % Trajectory lengths used
 n_rep = 100;             % Number of replicate simulations

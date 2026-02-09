@@ -170,6 +170,65 @@ set(gcf, 'Units', 'Inches', 'Position', [0, 0, 6, 5]); % Set size to width=6in &
 print("trajectories_model_" + ex_site_str + ".png",'-dpng','-r300');
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Combined plot
+
+font_size = 18;
+font_size_ticks = 16;
+
+figure;
+% Empirical trajectories plot
+subplot(1,2,1);
+
+hold on
+plot(g, X(1,:), 'color', [0.267004, 0.004874, 0.329415], 'LineWidth', 2);   % Empirical DBVPG6044 haplotype
+plot(g, X(2,:), 'color', [0.190631, 0.407061, 0.556089], 'LineWidth', 2);   % Empirical DBVPG6765 haplotype
+plot(g, X(3,:), 'color', [0.20803, 0.718701, 0.472873], 'LineWidth', 2);   % Empirical Y12 haplotype
+plot(g, X(4,:), 'color', [0.993248, 0.906157, 0.143936], 'LineWidth', 2);   % Empirical YPS128 haplotype
+
+title('Yeast experimental evolution', 'FontSize', font_size);
+xlabel('Generations', 'FontSize', font_size);
+ylabel('Haplotype frequency', 'FontSize', font_size);
+ax = gca;
+ax.FontSize = font_size_ticks;
+ylim([0.0,1.0]);
+xlim([0, 18]);
+
+legend({'DBVPG6044','DBVPG6765','Y12','YPS128'}, 'Location', 'northwest');
+
+% Adjust figure size and appearance
+% set(gcf, 'Units', 'Inches', 'Position', [0, 0, 6, 5]); % Set size to width=6in &; height=5in
+% print("trajectories_empirical_" + ex_site_str + ".png",'-dpng','-r300');
+
+
+% Modelled trajectories plot
+subplot(1,2,2);
+
+hold on
+plot(g_sim, X_sim(1,:), 'color', [0.267004, 0.004874, 0.329415], 'LineWidth', 2);   % Simulated DBVPG6044 haplotype
+plot(g_sim, X_sim(2,:), 'color', [0.190631, 0.407061, 0.556089], 'LineWidth', 2);   % Simulated DBVPG6765 haplotype
+plot(g_sim, X_sim(3,:), 'color', [0.20803, 0.718701, 0.472873], 'LineWidth', 2);   % Simulated Y12 haplotype
+plot(g_sim, X_sim(4,:), 'color', [0.993248, 0.906157, 0.143936], 'LineWidth', 2);   % Simulated YPS128 haplotype
+
+title('Model trajectories', 'FontSize', font_size);
+xlabel('Generations', 'FontSize', font_size);
+ylabel('Haplotype frequency', 'FontSize', font_size);
+ax = gca;
+ax.FontSize = font_size_ticks;
+ylim([0.0,1.0]);
+xlim([0, 18]);
+
+legend({'DBVPG6044','DBVPG6765','Y12','YPS128'}, 'Location', 'northwest');
+
+% Adjust figure size explicitly
+%set(gcf,'Position',[100 100 1200 500]); % Width=1200px Height=500px
+
+% Adjust figure size and appearance
+set(gcf, 'Units', 'Inches', 'Position', [0, 0, 12, 5]); % Set size to width=6in &; height=5in
+print("trajectories_emp_model_combined_" + ex_site_str + ".png",'-dpng','-r300');
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % predicting trajectories for estimated A for 22 more generations
 % Parameters
@@ -277,3 +336,7 @@ for allel_1 = 1:n
         end
     end
 end
+
+
+
+
